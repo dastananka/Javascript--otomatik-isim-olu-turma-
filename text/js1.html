@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input id="ad" onblur="tikla();" type="text" placeholder="Adınızı giriniz :">
+    <p id="sonuc">...</p>
+    
+
+    <script>
+        function tikla() {
+            var ad = document.getElementById("ad").value
+            var sayac = ad.length
+  
+             if (sayac <= 6) {
+                 var harfler = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+                 var rastgele_har_cek = ""
+                for (var i = sayac; i < 6; i++) 
+                    {
+                          rastgele_har_cek += harfler[Math.floor(Math.random()*harfler.length)]
+                    } 
+
+                      ad = ad + rastgele_har_cek
+    
+                 document.getElementById("sonuc").innerHTML = "Adınız en az 6 karakter olmalıdır. Adınız: " + ad
+                 } else
+                 {
+                  document.getElementById("sonuc").innerHTML = "hoşgeldiniz, " + ad
+            }
+        }    
+    </script>
+</body>
+</html>
